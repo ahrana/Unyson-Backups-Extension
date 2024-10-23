@@ -117,7 +117,7 @@ class FW_Ext_Backups_Task_Type_Zip extends FW_Ext_Backups_Task_Type {
             $zip->addFile($file_path, $file_zip_path);
 
             if ( $set_compression_is_available ) {
-                // Ensure compression name is not empty before setting
+                // Ensure compression name is not empty before setting.
                 $compression_method = apply_filters( 'fw_backup_compression_method', ZipArchive::CM_DEFAULT );
                 if (!empty($file_zip_path) && $compression_method !== false) {
                     $zip->setCompressionName( $file_zip_path, $compression_method );
